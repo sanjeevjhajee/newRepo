@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="new.css">
 </head>
 <body>
-    <h3>This a heading</h3>
+<div class="container">
+    <header>
+
+        <h2>What's your name?</h2>
+        <input type="text" name="Name" id="fullName">
+        <button onclick="result();">Submit</button>
+        <h1 id="5ka5"></h1>
+    </header>
+
+</div>
+
+<script>
+
+let nameBox = document.getElementById("5ka5").innerHTML;
+
+function result() {
+    let userInput = document.getElementById("fullName").value;
+
+    if (userInput=="Sanjeev") {
+        document.getElementById("5ka5").innerHTML= ("Namaste " + userInput);
+        
+    } else {
+        document.getElementById("5ka5").innerHTML= ("Hello " + userInput+ " is not an authorized user.");
+        
+    } 
+}
+</script>
 </body>
 </html>
