@@ -4,35 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="new.css">
+    <!-- <link rel="stylesheet" href="new.css"> -->
+
+    <style>
+        body{
+            margin: 0 10%;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            
+        }
+
+        #question{
+            background-color: darkgreen;
+            color: white;
+            padding: 8px;
+            border-radius: 12px 0px;
+        }
+
+        #hint{
+            background-color: black;
+            color: white;
+            padding: 12px;
+            border-radius: 12px 0px;
+        }
+
+        #ka5{
+            background-color: rgb(109, 6, 23);
+            color: white;
+            padding: 8px;
+            border-radius: 8px 0px;
+
+        }
+
+    </style>
 </head>
 <body>
 <div class="container">
-    <header>
 
-        <h2>What's your name?</h2>
+        <h2 id="question">Tumko shaadi karna hai ya nahi? <br> Agar karna hai to Instagram, Snapchat aur ye sab ganda kaam Chhodna Padega. </h2>
+        <h3 id="hint">Apna jawab Niche Daalo <span style="font-weight: bold; color: yellow;" >Only--- Yes Or No <br>uske baad niche "Submit" button dabao</span></h3>
         <input type="text" name="Name" id="fullName">
-        <button onclick="result();">Submit</button>
-        <h1 id="5ka5"></h1>
-    </header>
+        <button onclick="result()">Submit</button>
+        <h1 id="ka5"></h1>
+        <h1 id="love"> </h1>
+        <h2 id="noStatement"></h2>
 
 </div>
 
 <script>
-
-let nameBox = document.getElementById("5ka5").innerHTML;
+let moreData = document.getElementById ("love").value;
+let noStatement = document.getElementById("noStatement").value;
+let  yourData = document.getElementById("5ka5");
 
 function result() {
     let userInput = document.getElementById("fullName").value;
 
-    if (userInput=="Sanjeev") {
-        document.getElementById("5ka5").innerHTML= ("Namaste " + userInput);
+
+    if (userInput=="Yes" || userInput== "yes") {
+        moreData= "Love You Muski Kumari, Moti Kumari, Chumma Kumari, Muskan Kumari, Chiklu, Pagli, Gadhi, I Love You, Uuuummmmmaaaaaahhhhh"
+
+        document.getElementById("ka5").innerHTML=  ( moreData + " !");
         
-    } else {
-        document.getElementById("5ka5").innerHTML= ("Hello " + userInput+ " is not an authorized user.");
-        
-    } 
+    } else if(userInput=="No" || userInput== "no") {
+        noStatement= "Theek hai fir, Mobile bhi wapas kar dena, Kyunki jab shadi hin nahi karoge to phone kyu denge kisi ko hum."
+        document.getElementById("ka5").innerHTML= ("Hello " + noStatement);
+
+      } 
+
+      else { 
+
+        document.getElementById("ka5").innerHTML= ("Wrong Answer");
+
+
+      }
+
+
 }
+
+
+
 </script>
 </body>
 </html>
